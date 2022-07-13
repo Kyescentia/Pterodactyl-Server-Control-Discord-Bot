@@ -10,13 +10,7 @@ from utils.config import pterodactylapikey, pterodactyldomain
 
 api = PterodactylClient(pterodactyldomain, pterodactylapikey)
 
-
-class ServerError:
-    """There was a server error during a power action"""
-    pass
-
-
-class pwtro(commands.Cog):
+class ptrodactylcontrols(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -198,4 +192,4 @@ class pwtro(commands.Cog):
 
 
 def setup(bot):
-    bot.add_cog(pwtro(bot))
+    bot.add_cog(ptrodactylcontrols(bot))
