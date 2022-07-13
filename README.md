@@ -8,6 +8,11 @@ Just a discord bot that gives you the ability to control your servers (as long a
 
 ---
 
+**WHAT TO NOT DO?**
+- host this on the same server with your bot. **I AM NOT JOKING THIS WILL BREAK A LOT OF STUFF**
+
+---
+
 **How to use??**
 1. ok fr just fork this repo or download it to your computer
 2. Add your [discord bot token](https://discord.com/developers/applications) along with your **Pterodactyl Credentials** and your **host link** to the file in **utils > config.py**
