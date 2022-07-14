@@ -13,17 +13,25 @@ api = PterodactylClient(pterodactyldomain, pterodactylapikey)
 class ptrodactylcontrols(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+    
+    def Convert_Friendly_Name_to_ID(self, server_id):
+        """A common function to use to convert custom identifiers to server IDs"""
+        if server_id.lower() == "any identifier":
+            server_id = "YOUR SERVER ID"
+        elif server_id.lower() == "any identifier":
+            server_id = "YOUR SERVER ID"
+        return server_id
 
     
     @commands.command()
     @commands.is_owner()
     async def start(self, ctx, server_id=None):
         if server_id == None:
-            return await ctx.send(embed=discord.Embed(description="Hey buddy, you need to specify a server identifier or server id",color=0xb51818)) 
-        if server_id.lower() == "any identifier":
-            server_id = "YOUR SERVER ID"
-        elif server_id.lower() == "any identifier":
-            server_id = "YOUR SERVER ID"   
+            await ctx.send(embed=discord.Embed(description="Hey buddy, you need to specify a server identifier or server id",color=0xb51818)) 
+            return
+        else:
+            # Use a common function cross commands to convert
+            server_id = self.Convert_Friendly_Name_to_ID(server_id)   
         try:
             response = api.client.servers.send_power_action(server_id, 'start')
             if response.status_code == 204:
@@ -44,11 +52,11 @@ class ptrodactylcontrols(commands.Cog):
     @commands.is_owner()
     async def stop(self, ctx, server_id=None):
         if server_id == None:
-            return await ctx.send(embed=discord.Embed(description="Hey buddy, you need to specify a server identifier or server id",color=0xb51818)) 
-        if server_id.lower() == "any identifier":
-            server_id = "YOUR SERVER ID"
-        elif server_id.lower() == "any identifier":
-            server_id = "YOUR SERVER ID"    
+            await ctx.send(embed=discord.Embed(description="Hey buddy, you need to specify a server identifier or server id",color=0xb51818)) 
+            return
+        else:
+            # Use a common function cross commands to convert
+            server_id = self.Convert_Friendly_Name_to_ID(server_id)  
         try:
             response = api.client.servers.send_power_action(server_id, 'stop')
             if response.status_code == 204:
@@ -67,11 +75,11 @@ class ptrodactylcontrols(commands.Cog):
     @commands.is_owner()
     async def restart(self, ctx, server_id=None):
         if server_id == None:
-            return await ctx.send(embed=discord.Embed(description="Hey buddy, you need to specify a server identifier or server id",color=0xb51818))    
-        if server_id.lower() == "any identifier":
-            server_id = "YOUR SERVER ID"
-        elif server_id.lower() == "any identifier":
-            server_id = "YOUR SERVER ID"       
+            await ctx.send(embed=discord.Embed(description="Hey buddy, you need to specify a server identifier or server id",color=0xb51818)) 
+            return
+        else:
+            # Use a common function cross commands to convert
+            server_id = self.Convert_Friendly_Name_to_ID(server_id)     
         try:
             response = api.client.servers.send_power_action(server_id, 'restart')
             if response.status_code == 204:
@@ -90,13 +98,13 @@ class ptrodactylcontrols(commands.Cog):
     @commands.is_owner()
     async def sendcommand(self, ctx, server_id=None,*, cmd=None):
         if server_id == None:
-            return await ctx.send(embed=discord.Embed(description="Hey buddy, you need to specify a server identifier or server id",color=0xb51818))
+            await ctx.send(embed=discord.Embed(description="Hey buddy, you need to specify a server identifier or server id",color=0xb51818)) 
+            return
+        else:
+            # Use a common function cross commands to convert
+            server_id = self.Convert_Friendly_Name_to_ID(server_id)
         if cmd == None:
-            return await ctx.send(embed=discord.Embed(description="Hey buddy, you need to specify a command to send",color=0xb51818))
-        if server_id.lower() == "any identifier":
-            server_id = "YOUR SERVER ID"
-        elif server_id.lower() == "any identifier":
-            server_id = "YOUR SERVER ID"       
+            return await ctx.send(embed=discord.Embed(description="Hey buddy, you need to specify a command to send",color=0xb51818))      
         try:
             response = api.client.servers.send_console_command(server_id, cmd)
             if response.status_code == 204:
@@ -115,11 +123,11 @@ class ptrodactylcontrols(commands.Cog):
     @commands.is_owner()
     async def status(self, ctx, server_id=None):
         if server_id == None:
-            return await ctx.send(embed=discord.Embed(description="Hey buddy, you need to specify a server identifier or server id",color=0xb51818))
-        if server_id.lower() == "any identifier":
-            server_id = "YOUR SERVER ID"
-        elif server_id.lower() == "any identifier":
-            server_id = "YOUR SERVER ID"      
+            await ctx.send(embed=discord.Embed(description="Hey buddy, you need to specify a server identifier or server id",color=0xb51818)) 
+            return
+        else:
+            # Use a common function cross commands to convert
+            server_id = self.Convert_Friendly_Name_to_ID(server_id) 
         try:
             response = api.client.servers.get_server_utilization(server_id, detail=True)
             if response['attributes']['is_suspended'] == 'True':
