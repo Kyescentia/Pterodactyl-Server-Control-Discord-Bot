@@ -16,12 +16,15 @@ Just a discord bot that gives you the ability to control your servers (as long a
 **Instructions**
 1. Git Pull or Download the repo to your server
 2. Add your [discord bot token](https://discord.com/developers/applications) along with your **API Credentials** and your **Host's Panel Link** to the file in **utils > config.py**
-![part 1 of getting api key](https://cdn.discordapp.com/attachments/933327160687599658/1111211753875968040/image.png)
-![part 2 of getting api key](https://cdn.discordapp.com/attachments/933327160687599658/1111211897451188224/image.png)
 3. Navigate to the console and run `pip install -U -r requirements.txt` **(ENSURE YOUR DIRECTORY IS CORRECT BEFORE RUNNING IT)**
 4. Run `python main.py` in the console
 5. Your bot should be up and running with the commands in place
 
 ---
+**How to get your API Key**
 
+![part 1 of getting api key](https://cdn.discordapp.com/attachments/933327160687599658/1111211753875968040/image.png)
+![part 2 of getting api key](https://cdn.discordapp.com/attachments/933327160687599658/1111211897451188224/image.png)
+
+---
 ok that's all...  *sponsor me if you'd like :)*
