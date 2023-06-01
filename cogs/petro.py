@@ -58,7 +58,7 @@ class ptrodactylcontrols(commands.Cog):
 
     @slash_command(description="hello")
     @option(name="server",autocomplete=discord.utils.basic_autocomplete(authchecker))
-    @option(name="power", choices=["on", "start", "off", "stop","restart", "status", "sendcommand", "kill"])
+    @option(name="action", choices=["on", "start", "off", "stop","restart", "status", "sendcommand", "kill"])
     @option(name="command", description="The command to run on the server", required=False)
     async def server(self, ctx: commands.Context, server: str, action: str, command:str):
         """
