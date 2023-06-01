@@ -8,6 +8,9 @@ from humanfriendly import format_size, format_timespan
 from utils.config import pterodactylapikey, pterodactyldomain
 from discord.commands import slash_command, option
 
+# NOTES:
+# ServerIdentification SHOULD be the Name of the Server you will be identifying it as
+# server id SHOULD be the ID of the server.
 
 api = PterodactylClient(pterodactyldomain, pterodactylapikey)
 AUTHORIZED_USERS = [USER ID, USER ID, USER ID, USER ID, USER ID] # This is for in the event someone runs the command and are not authorized, they will not see the servers listed.
