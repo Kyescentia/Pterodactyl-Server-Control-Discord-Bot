@@ -10,7 +10,7 @@ from discord.commands import slash_command, option
 
 
 api = PterodactylClient(pterodactyldomain, pterodactylapikey)
-AUTHORIZED_USERS = [USER ID, USER ID, USER ID, USER ID, USER ID]
+AUTHORIZED_USERS = [USER ID, USER ID, USER ID, USER ID, USER ID] # This is for in the event someone runs the command and are not authorized, they will not see the servers listed.
 SERVER_ID_LIST = ["ServerIdentification","ServerIdentification","ServerIdentification", "ServerIdentification", "ServerIdentification", "ServerIdentification","ServerIdentification","ServerIdentification","ServerIdentification","ServerIdentification"]
 
 
@@ -34,26 +34,26 @@ class ptrodactylcontrols(commands.Cog):
    # THE SERVER IDENTIFICATION MUST BE SAME AS THE ONE PROVIDED ABOVE. SPACES ARE NOT ALLOWED DUE TO HOW IT WORKS
     def Convert_Friendly_Name_to_ID(self, server_id):
         """A common function to use to convert custom identifiers to server IDs"""
-        if server_id.lower() == "ServerIdentification":
-            server_id = "server id"
-        elif server_id.lower() == "ServerIdentification":
-            server_id = "server id"   
-        elif server_id.lower() == "ServerIdentification":
-            server_id = "server id"        
-        elif server_id.lower() == "ServerIdentification":
-            server_id = "server id"   
-        elif server_id.lower() == "ServerIdentification":     
-            server_id = "server id"   
-        elif server_id.lower() == "ServerIdentification":
-            server_id = "server id"
-        elif server_id.lower() == "ServerIdentification":
-            server_id = "server id"
-        elif server_id.lower() == "ServerIdentification":
-            server_id = "server id"  
-        elif server_id.lower() == "ServerIdentification":
-            server_id = "server id"
-        elif server_id.lower() == "ServerIdentification":
-            server_id = "server id"    
+        if server_id.lower() == "Name of Server":
+            server_id = "ServerIdentification"
+        elif server_id.lower() == "Name of Server":
+            server_id = "ServerIdentification"   
+        elif server_id.lower() == "Name of Server":
+            server_id = "ServerIdentification"        
+        elif server_id.lower() == "Name of Server":
+            server_id = "ServerIdentification"   
+        elif server_id.lower() == "Name of Server":     
+            server_id = "ServerIdentification"   
+        elif server_id.lower() == "Name of Server":
+            server_id = "ServerIdentification"
+        elif server_id.lower() == "Name of Server":
+            server_id = "ServerIdentification"
+        elif server_id.lower() == "Name of Server":
+            server_id = "ServerIdentification"  
+        elif server_id.lower() == "Name of Server":
+            server_id = "ServerIdentification"
+        elif server_id.lower() == "Name of Server":
+            server_id = "ServerIdentification"    
         return server_id
 
     @slash_command(description="hello")
